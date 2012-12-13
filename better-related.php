@@ -189,7 +189,7 @@ if ( !class_exists( 'BetterRelated' ) ) {
 					"<p>%s</p>",
 					__( 'No related content found.', 'better-related' )
 				),
-				'thanks'         => 'below',
+				'thanks'         => 'none',
 				'stylesheet'     => true,
 				'showdetails'    => false
 			);
