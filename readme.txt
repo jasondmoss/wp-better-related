@@ -1,8 +1,8 @@
 === Better Related Posts ===
 Contributors: nkuttler
-Author URI: http://www.nkuttler.de/
-Plugin URI: http://www.nkuttler.de/wordpress-plugin/better-related-posts-and-custom-post-types/
-Donate link: http://www.nkuttler.de/wordpress/donations/
+Author URI: http://kuttler.eu/
+Plugin URI: http://kuttler.eu/wordpress-plugin/better-related-posts-and-custom-post-types/
+Donate link: http://kuttler.eu/donations/
 Tags: admin, plugin, related post, related custom post types, related custom taxonomies, i18n, l10n, internationalized, localized, cache, caching, transients, php5, mysql5
 Requires at least: 3.0
 Tested up to: 3.0
@@ -30,17 +30,17 @@ But there is a problem. There is no plugin that lists related posts that are fro
 
 = Other plugins I wrote =
 
- * [Better Lorem Ipsum Generator](http://www.nkuttler.de/wordpress-plugin/wordpress-lorem-ipsum-generator-plugin/)
- * [Better Related Posts](http://www.nkuttler.de/wordpress-plugin/wordpress-related-posts-plugin/)
- * [Custom Avatars For Comments](http://www.nkuttler.de/wordpress-plugin/custom-avatars-for-comments/)
- * [Better Tag Cloud](http://www.nkuttler.de/wordpress-plugin/a-better-tag-cloud-widget/)
- * [Theme Switch](http://www.nkuttler.de/wordpress-plugin/theme-switch-and-preview-plugin/)
- * [MU fast backend switch](http://www.nkuttler.de/wordpress-plugin/wpmu-switch-backend/)
- * [Visitor Movies for WordPress](http://www.nkuttler.de/wordpress-plugin/record-movies-of-visitors/)
- * [Zero Conf Mail](http://www.nkuttler.de/wordpress-plugin/zero-conf-mail/)
- * [Move WordPress Comments](http://www.nkuttler.de/wordpress-plugin/move-wordpress-comments/)
- * [Delete Pending Comments](http://www.nkuttler.de/wordpress-plugin/delete-pending-comments/)
- * [Snow and more](http://www.nkuttler.de/wordpress-plugin/snow-balloons-and-more/)
+ * [Better Lorem Ipsum Generator](http://kuttler.eu/wordpress-plugin/wordpress-lorem-ipsum-generator-plugin/)
+ * [Better Related Posts](http://kuttler.eu/wordpress-plugin/wordpress-related-posts-plugin/)
+ * [Custom Avatars For Comments](http://kuttler.eu/wordpress-plugin/custom-avatars-for-comments/)
+ * [Better Tag Cloud](http://kuttler.eu/wordpress-plugin/a-better-tag-cloud-widget/)
+ * [Theme Switch](http://kuttler.eu/wordpress-plugin/theme-switch-and-preview-plugin/)
+ * [MU fast backend switch](http://kuttler.eu/wordpress-plugin/wpmu-switch-backend/)
+ * [Visitor Movies for WordPress](http://kuttler.eu/wordpress-plugin/record-movies-of-visitors/)
+ * [Zero Conf Mail](http://kuttler.eu/wordpress-plugin/zero-conf-mail/)
+ * [Move WordPress Comments](http://kuttler.eu/wordpress-plugin/move-wordpress-comments/)
+ * [Delete Pending Comments](http://kuttler.eu/wordpress-plugin/delete-pending-comments/)
+ * [Snow and more](http://kuttler.eu/wordpress-plugin/snow-balloons-and-more/)
 
 == Installation ==
 
@@ -59,30 +59,30 @@ If you don't enable automatic display of related posts on the plugin options pag
 Here is a short example how to build your own loop of related posts. This way you can add excerpts, post thumbnails etc.
 
 `<?php
-	$scores = the_related_get_scores(); // pass the post ID if outside of the loop
-	$posts = array_slice( array_keys( $scores ), 0, 5 ); // keep only the the five best results
-	$args = array(
-	    'post__in'			=> $posts,
-		'posts_per_page'	=> 5,
-		'caller_get_posts'	=> 1 // ignore sticky status
-	);
-	$my_query = new WP_Query( $args );
-	if ( $my_query->have_posts() ) {
-	    while ( $my_query->have_posts() ) {
-	        $my_query->the_post();
-	        echo '<a href="' .  get_permalink( get_the_ID() ) . '">';
-	        the_title();
-	        echo '</a>';
-	        the_excerpt();
-	        if ( has_post_thumbnail() ) {
-	            the_post_thumbnail( 'thumb' );
-	        }
-	        echo '<br>';
-	    }
-	}
-	else {
-	    echo "No posts found...";
-	}
+    $scores = the_related_get_scores(); // pass the post ID if outside of the loop
+    $posts = array_slice( array_keys( $scores ), 0, 5 ); // keep only the the five best results
+    $args = array(
+        'post__in'            => $posts,
+        'posts_per_page'    => 5,
+        'caller_get_posts'    => 1 // ignore sticky status
+    );
+    $my_query = new WP_Query( $args );
+    if ( $my_query->have_posts() ) {
+        while ( $my_query->have_posts() ) {
+            $my_query->the_post();
+            echo '<a href="' .  get_permalink( get_the_ID() ) . '">';
+            the_title();
+            echo '</a>';
+            the_excerpt();
+            if ( has_post_thumbnail() ) {
+                the_post_thumbnail( 'thumb' );
+            }
+            echo '<br>';
+        }
+    }
+    else {
+        echo "No posts found...";
+    }
 ?>`
 
 Please notice that the posts won't be ordered by score if you build a loop like this. To accomplish this you'll have to sort the posts in $my_query manually. I have a relevant example on [how to sort posts manually](http://www.nkuttler.de/paste/1l3/) on my site. I'll build something like this into the plugin in the future.
@@ -92,9 +92,9 @@ Please notice that the posts won't be ordered by score if you build a loop like 
 Logged in admins can get the results of all scoring methods by using the template tag `<?php the_related_analyze(); ?>` in the loop of their theme. Example:
 
 `<?php
-	if ( current_user_can( 'manage_options' ) && function_exists( 'the_related_analyze' ) ) {
-		the_related_analyze();
-	}
+    if ( current_user_can( 'manage_options' ) && function_exists( 'the_related_analyze' ) ) {
+        the_related_analyze();
+    }
 ?>`
 
 = The scoring methods =
@@ -111,13 +111,13 @@ It is possible to use different configurations of the plugin at the same time. L
 
 `<?php
 the_related(
-	get_the_ID(),
-	array(
-		'usept'	=> array(
-			'venue'	=> true
-		),
-		'storage_id'	=> 'ventures-better-related-'
-	)
+    get_the_ID(),
+    array(
+        'usept'    => array(
+            'venue'    => true
+        ),
+        'storage_id'    => 'ventures-better-related-'
+    )
 );
 ?>`
 
@@ -127,15 +127,15 @@ To get a similar listing that includes related posts (from the built-in 'post' p
 
 `<?php
 the_related(
-	get_the_ID(),
-	array(
-		'usept'	=> array(
-			'post'		=> true,
-			'venue'		=> true
-		),
-		'maxresults'	=> 7,
-		'storage_id'	=> 'more-better-related-'
-	)
+    get_the_ID(),
+    array(
+        'usept'    => array(
+            'post'        => true,
+            'venue'        => true
+        ),
+        'maxresults'    => 7,
+        'storage_id'    => 'more-better-related-'
+    )
 );
 ?>`
 
@@ -143,37 +143,37 @@ Now an example that shows off all configuration options available:
 
 `<?php
 the_related(
-	get_the_ID(),
-	array(
-		'usept'			=> array(
-			'post'		=> true,
-			'venue'		=> true
-		),
-		'usetax'		=> array(
-			'drinks'	=> true, 
-			'food'		=> true, 
-			'post_tag'	=> true, 
-			'category'	=> true
-		),
-		'do_c2c'		=> 1.5,
-		'do_t2c'		=> 2,
-		'do_k2c'		=> 2,
-		'do_t2t'		=> 1,
-		'do_k2t'		=> 2,
-		'do_x2x'		=> 4.3,
-		'minscore'		=> 25,
-		'maxresults'	=> 5,
-		'log'			=> true,
-		'loglevel'		=> 'taxquery',
-		'storage_id'	=> 'better-related-full-example-',
-		'storage'		=> 'transient',
-		'cachetime'		=> 1,
-		'querylimit'	=> 10000,
-		'incremental'	=> true,
-		't_querylimit'	=> 30000,
-		'relatedtitle'	=> 'Related venues and posts',
-		'relatednone'	=> 'No related venues or posts'
-	)
+    get_the_ID(),
+    array(
+        'usept'         => array(
+            'post'      => true,
+            'venue'     => true
+        ),
+        'usetax'        => array(
+            'drinks'    => true,
+            'food'      => true,
+            'post_tag'  => true,
+            'category'  => true
+        ),
+        'do_c2c'        => 1.5,
+        'do_t2c'        => 2,
+        'do_k2c'        => 2,
+        'do_t2t'        => 1,
+        'do_k2t'        => 2,
+        'do_x2x'        => 4.3,
+        'minscore'      => 25,
+        'maxresults'    => 5,
+        'log'           => true,
+        'loglevel'      => 'taxquery',
+        'storage_id'    => 'better-related-full-example-',
+        'storage'       => 'transient',
+        'cachetime'     => 1,
+        'querylimit'    => 10000,
+        'incremental'   => true,
+        't_querylimit'  => 30000,
+        'relatedtitle'  => 'Related venues and posts',
+        'relatednone'   => 'No related venues or posts'
+    )
 );
 ?>`
 
@@ -210,6 +210,8 @@ The second option could be interesting if your site is not in english and you wa
 None yet.
 
 == Changelog ==
+= 0.4.3.4 ( 2012-12-13 ) =
+ * 3.5 compatibility
 = 0.4.3.3 ( 2010-11-18 ) =
  * Add check for MySQL version
  * Fix serious bug, score couldn't be calculated. Thanks dave.
