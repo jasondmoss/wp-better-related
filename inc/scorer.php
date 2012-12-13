@@ -326,7 +326,7 @@ class BetterRelatedScorer extends BetterRelated {
 		$query .= ';';
 		$query = apply_filters( 'better-related-cquery', $query );
 		$this->log( $query, 'query' );
-		$posts = $wpdb->get_results( $wpdb->prepare( $query ), ARRAY_N );
+		$posts = $wpdb->get_results( $query, ARRAY_N );
 		$this->score['queries']++;
 		$this->log( print_r( $posts, true ), 'query' );
 		// $post[0] is the post ID
@@ -471,7 +471,7 @@ class BetterRelatedScorer extends BetterRelated {
 		$query .= ';';
 		$query = apply_filters( 'better-related-taxquery', $query );
 		$this->log( $query, 'query' );
-		$posts = $wpdb->get_results( $wpdb->prepare( $query ), OBJECT );
+		$posts = $wpdb->get_results( $query, OBJECT );
 		$this->score['queries']++;
 		$r = array();
 		foreach( @$posts as $post ) {
