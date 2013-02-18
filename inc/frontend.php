@@ -166,7 +166,7 @@ class BetterRelatedFrontend extends BetterRelated {
 			$r .= $relatednone;
 			$r .= '</div>';
 		}
-		return $r;
+		return isset($r) ? $r : '';
 	}
 
 	/**
