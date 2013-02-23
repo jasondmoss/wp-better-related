@@ -207,9 +207,13 @@ The second option could be interesting if your site is not in english and you wa
 
 == Frequently Asked Questions ==
 
-None yet.
+Q: Can you add feature X/Y/Z
+
+A: No, I don't use wordpress myself any more. But send me pull requests, https://github.com/nkuttler/wp-better-related
 
 == Changelog ==
+= 0.4.3.5 (2013-02-23) =
+ * Small fix thanks to Flynsarmy
 = 0.4.3.4 ( 2012-12-13 ) =
  * 3.5 compatibility
 = 0.4.3.3 ( 2010-11-18 ) =

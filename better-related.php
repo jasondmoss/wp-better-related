@@ -21,7 +21,7 @@ Author: Nicolas Kuttler
 Author URI: http://www.nkuttler.de/
 Plugin URI: http://www.nkuttler.de/wordpress-plugin/better-related-posts-and-custom-post-types/
 Description: Better related posts plugin that finds custom post types and searches custom taxonomies
-Version: 0.4.3.4
+Version: 0.4.3.5
 Text Domain: better-related
 */
 
