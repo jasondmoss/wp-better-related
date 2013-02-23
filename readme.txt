@@ -6,7 +6,7 @@ Donate link: http://kuttler.eu/donations/
 Tags: admin, plugin, related post, related custom post types, related custom taxonomies, i18n, l10n, internationalized, localized, cache, caching, transients, php5, mysql5
 Requires at least: 3.0
 Tested up to: 3.5
-Stable tag: 0.4.3.4
+Stable tag: 0.4.3.5
 
 Do you use custom post types and taxonomies? Do you want to list any related content, not just posts?
 
